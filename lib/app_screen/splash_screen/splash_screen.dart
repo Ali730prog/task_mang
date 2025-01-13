@@ -21,6 +21,8 @@ class _SplashScreenState extends State<SplashScreen> {
         backgroundColor: AppColor.blue212832,
         body: Container(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(
                 height: h * 0.05,
@@ -30,14 +32,42 @@ class _SplashScreenState extends State<SplashScreen> {
                 AppImages.splahImage,
                 width: w * 0.85,
               )),
-              SizedBox(
-                height: h * 0.10,
-              ),
-              Text("Manage your Task with",style: GoogleFonts.lato(
-                fontSize: 61,
-                fontWeight: FontWeight.w500,
-                color: AppColor.whiteFFFFFF
-              ),)
+              // SizedBox(
+              //   height: h * 0.10,
+              // ),
+              Padding(
+                padding:  EdgeInsets.only(left: w*0.06,top: h*0.02),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Manage",style: GoogleFonts.lato(
+                      fontSize: 60,
+                      height: 0.7,
+                      fontWeight: FontWeight.w700,
+                      color: AppColor.whiteFFFFFF,
+                    ),), Text(
+                      "Your",style: GoogleFonts.lato(
+                      textBaseline: TextBaseline.ideographic,
+                      height: 1.4,
+                      fontSize: 60,
+                      fontWeight: FontWeight.w700,
+                      color: AppColor.whiteFFFFFF,
+                    ),),
+                    Text("Task With",style: GoogleFonts.lato(
+                      fontSize: 60,
+                      height: 0.9,
+                      fontWeight: FontWeight.w700,
+                      color: AppColor.whiteFFFFFF,
+                    ),),
+                    Text("Day Task",style: GoogleFonts.lato(
+                      fontSize: 60,
+                      fontWeight: FontWeight.bold,
+                      color: AppColor.yellowFED36A,
+                    ),)
+                  ],
+                ),),
+
+
             ],
           ),
         ),
