@@ -1,10 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:task_manage_ment/app_const/app_color.dart';
 import 'package:task_manage_ment/app_const/app_image.dart';
-import 'package:task_manage_ment/app_screen/splash_screen/sign_in_screen/sign_in_screen.dart';
-import 'package:task_manage_ment/common_widgets/bold_text.dart';
 import 'package:task_manage_ment/common_widgets/common_button.dart';
+import '../sign_in_screen/sign_in_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,6 +15,15 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (_) => SignInScreen()));
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
@@ -34,9 +44,6 @@ class _SplashScreenState extends State<SplashScreen> {
                 AppImages.splahImage,
                 width: w * 0.85,
               )),
-              // SizedBox(
-              //   height: h * 0.10,
-              // ),
               Padding(
                 padding: EdgeInsets.only(left: w * 0.06, top: h * 0.04),
                 child: Column(

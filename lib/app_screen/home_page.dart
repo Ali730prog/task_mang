@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
               text: "Welcome Back!",
               textcolor: AppColor.yellowFED36A,
             ),
-            BoldText( ),
+            BoldText( text: "jhaskjfhask",),
           ],
         ),
       ),
