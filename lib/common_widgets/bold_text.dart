@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class BoldText extends StatefulWidget {
-  // fina
   const BoldText({super.key});
 
   @override
@@ -16,7 +15,6 @@ class _BoldTextState extends State<BoldText> {
       fontWeight: FontWeight.w600,
       fontSize: 26,
       color: Colors.white,
-
     ),);
   }
 }
