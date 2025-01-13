@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_manage_ment/app_const/app_image.dart';
+import 'package:task_manage_ment/common_widgets/bold_text.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -18,7 +19,8 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           children: [
             Image.asset(AppImage.splahImage),
-            
+            SizedBox(height: h*0.10,),
+            BoldText()
           ],
         ),
       ),
