@@ -11,6 +11,9 @@ class AppImage{
   static const String avatar_2 = "${_baseUrl}avatar_2.png";
   static const String avatar_3 = "${_baseUrl}avatar_3.png";
   static const String avatar_4 = "${_baseUrl}avatar_4.png";
+  static const String avatar_5 = "${_baseUrl}avatar_5.png";
+  static const String avatar_6 = "${_baseUrl}avatar_6.png";
+  static const String complete_project = "${_baseUrl}complete_project.png";
 
 
 }
