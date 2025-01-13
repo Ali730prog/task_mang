@@ -14,14 +14,17 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
-    return Scaffold(
-      body: Container(
-        child: Column(
-          children: [
-            Image.asset(AppImage.splahImage),
-            SizedBox(height: h*0.10,),
-            BoldText()
-          ],
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          child: Column(
+            children: [
+              SizedBox(height: h*0.05,),
+              Center(child: Image.asset(AppImages.splahImage,width: w*0.85,)),
+              SizedBox(height: h*0.10,),
+              BoldText()
+            ],
+          ),
         ),
       ),
     );

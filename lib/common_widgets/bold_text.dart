@@ -15,6 +15,7 @@ class _BoldTextState extends State<BoldText> {
       fontWeight: FontWeight.w600,
       fontSize: 26,
       color: Colors.white,
+
     ),);
   }
 }

@@ -1,6 +1,6 @@
-class AppImage{
+class AppImages{
 
-  static const String _baseUrl = 'assets/image/';
+  static const String _baseUrl = 'assets/images/';
 
   static const String splahImage = "${_baseUrl}splah_image.png";
   static const String app_logo = "${_baseUrl}app_logo.png";
