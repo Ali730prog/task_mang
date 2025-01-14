@@ -20,6 +20,8 @@ class AppImages{
   static const String avatar_5 = "${_baseUrl}avatar_5.png";
   static const String avatar_6 = "${_baseUrl}avatar_6.png";
   static const String complete_project = "${_baseUrl}complete_project.png";
+  static const String search_img = "${_baseUrl}search_icon.png";
+  static const String filter_icon="${_baseUrl}filter_icon.png";
 
 
 }

@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:task_manage_ment/app_const/app_color.dart';
 import 'package:task_manage_ment/app_const/app_image.dart';
 import 'package:task_manage_ment/common_widgets/common_button.dart';
+import '../home_page.dart';
 import '../sign_in_screen/sign_in_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -20,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(Duration(seconds: 3), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (_) => SignInScreen()));
+          context, MaterialPageRoute(builder: (_) => MainScreen()));
     });
   }
 
@@ -31,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColor.blue212832,
-        body: Container(
+        body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
