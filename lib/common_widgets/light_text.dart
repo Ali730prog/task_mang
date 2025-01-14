@@ -11,11 +11,11 @@ class LightText extends StatefulWidget {
   const LightText(
       {super.key,
       required this.text,
+
       this.textcolor=AppColor.whiteFFFFFF,
       this.textsize=12,
       this.weight=FontWeight.w500, });
-
-  @override
+@override
   State<LightText> createState() => _LightTextState();
 }
 
@@ -23,6 +23,7 @@ class _LightTextState extends State<LightText> {
   @override
   Widget build(BuildContext context) {
     return Text(
+
       widget.text,
       style: GoogleFonts.inter(
         fontWeight: widget.weight,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_manage_ment/app_const/app_image.dart';
-import 'package:task_manage_ment/app_screen/sign_up_screen/sign_up_screen.dart';
+import 'package:task_manage_ment/app_screen/sign_in_screen/sign_in_screen.dart';
 import 'package:task_manage_ment/common_widgets/bold_text.dart';
 import 'package:task_manage_ment/common_widgets/common_button.dart';
 import 'package:task_manage_ment/common_widgets/common_text_field.dart';
@@ -8,14 +8,14 @@ import 'package:task_manage_ment/common_widgets/light_text.dart';
 
 import '../../../app_const/app_color.dart';
 
-class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
 
   @override
-  State<SignInScreen> createState() => _SignInScreenState();
+  State<SignupScreen> createState() => _SignupScreenState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
+class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -38,17 +38,32 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                   Center(
                       child: Image.asset(
-                    AppImages.app_logo,
-                    width: w * 0.40,
-                  )),
-                  SizedBox(
-                    height: h * 0.04,
-                  ),
-                  BoldText(
-                    text: "Welcome Back!",
-                  ),
+                        AppImages.app_logo,
+                        width: w * 0.40,
+                      )),
                   SizedBox(
                     height: h * 0.02,
+                  ),
+                  BoldText(
+                    text: "Create your account",
+                  ),
+                  SizedBox(
+                    height: h * 0.01,
+                  ),
+                  LightText(
+                    text: "Full Name",
+                    textcolor: AppColor.grey8CAAB9,
+                    textsize: 15,
+                  ),
+                  SizedBox(
+                    height: h * 0.01,
+                  ),
+                  CommonTextField(
+                    prefixImage: AppImages.user,
+                    hintText: 'Hafiz Arslan',
+                  ),
+                  SizedBox(
+                    height: h * 0.01,
                   ),
                   LightText(
                     text: "Email Address",
@@ -63,7 +78,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     hintText: 'BSsoloution@gmail.com',
                   ),
                   SizedBox(
-                    height: h * 0.02,
+                    height: h * 0.01,
                   ),
                   LightText(
                     text: "Password",
@@ -92,9 +107,9 @@ class _SignInScreenState extends State<SignInScreen> {
                     ],
                   ),
                   SizedBox(
-                    height: h * 0.04,
+                    height: h * 0.02,
                   ),
-                  CommonButton(text: "Log in"),
+                  CommonButton(text: "Sign Up"),
                   SizedBox(
                     height: h * 0.02,
                   ),
@@ -126,7 +141,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     ],
                   ),
                   SizedBox(
-                    height: h * 0.03,
+                    height: h * 0.02,
                   ),
                   Container(
                     decoration: BoxDecoration(
@@ -141,10 +156,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          AppImages.google_icon,
-                          width: w * 0.10,
-                        ),
+                        Image.asset(AppImages.google_icon,width: w*0.10,),
                         SizedBox(
                           width: w * 0.03,
                         ),
@@ -163,28 +175,26 @@ class _SignInScreenState extends State<SignInScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+
                       LightText(
                         textsize: 14,
                         weight: FontWeight.w500,
                         text: "Don’t have an account? ",
                         textcolor: AppColor.whiteFFFFFF,
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SignupScreen()));
+                      ), GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (_)=>SignInScreen()));
                         },
                         child: LightText(
                           textsize: 14,
                           weight: FontWeight.w500,
-                          text: "Sign Up",
+                          text: "Login",
                           textcolor: AppColor.yellowFED36A,
                         ),
                       ),
                     ],
                   )
+
                 ],
               ),
             ),

@@ -9,7 +9,9 @@ class AppImages{
   static const String clender = "${_baseUrl}clender.png";
   static const String group = "${_baseUrl}group.png";
   static const String user = "${_baseUrl}user.png";
+  static const String visibilty = "${_baseUrl}visibilty.png";
   static const String avatar_2 = "${_baseUrl}avatar_2.png";
+  static const String password = "${_baseUrl}password.png";
   static const String avatar_3 = "${_baseUrl}avatar_3.png";
   static const String avatar_4 = "${_baseUrl}avatar_4.png";
   static const String avatar_5 = "${_baseUrl}avatar_5.png";
