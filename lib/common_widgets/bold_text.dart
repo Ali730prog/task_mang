@@ -9,10 +9,10 @@ class BoldText extends StatefulWidget {
   final FontWeight? weight;
   const BoldText(
       {super.key,
-      required this.text,
-      this.textsize=26.0,
-      this.textcolor=AppColor.whiteFFFFFF,
-      this.weight=FontWeight.w600});
+        required this.text,
+        this.textsize=26.0,
+        this.textcolor=AppColor.whiteFFFFFF,
+        this.weight=FontWeight.w600});
 
   @override
   State<BoldText> createState() => _BoldTextState();
