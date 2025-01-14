@@ -12,7 +12,7 @@ class BoldText extends StatefulWidget {
         required this.text,
         this.textsize=26.0,
         this.textcolor=AppColor.whiteFFFFFF,
-        this.weight=FontWeight.w600});
+        this.weight=FontWeight.w600,});
 
   @override
   State<BoldText> createState() => _BoldTextState();

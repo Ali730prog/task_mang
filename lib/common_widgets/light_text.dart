@@ -13,7 +13,7 @@ class LightText extends StatefulWidget {
       required this.text,
       this.textcolor=AppColor.whiteFFFFFF,
       this.textsize=12,
-      this.weight=FontWeight.w500});
+      this.weight=FontWeight.w500, });
 
   @override
   State<LightText> createState() => _LightTextState();
