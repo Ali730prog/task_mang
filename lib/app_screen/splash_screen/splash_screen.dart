@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColor.blue212832,
-        body: Container(
+        body: SingleChildScrollView(
           child: Column(
             children: [
               SizedBox(
