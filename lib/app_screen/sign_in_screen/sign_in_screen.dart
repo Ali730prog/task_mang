@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_manage_ment/app_const/app_image.dart';
+import 'package:task_manage_ment/app_screen/profile_screen/profile_screen.dart';
 import 'package:task_manage_ment/app_screen/sign_up_screen/sign_up_screen.dart';
 import 'package:task_manage_ment/common_widgets/bold_text.dart';
 import 'package:task_manage_ment/common_widgets/common_button.dart';
@@ -94,7 +95,11 @@ class _SignInScreenState extends State<SignInScreen> {
                   SizedBox(
                     height: h * 0.04,
                   ),
-                  CommonButton(text: "Log in"),
+                  CommonButton(
+                      ontap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (_)=>ProfileScreen()));
+                      },
+                      text: "Log in"),
                   SizedBox(
                     height: h * 0.02,
                   ),
