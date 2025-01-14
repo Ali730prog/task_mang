@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:task_manage_ment/app_const/app_color.dart';
 import 'package:task_manage_ment/app_const/app_image.dart';
 import 'package:task_manage_ment/common_widgets/bold_text.dart';
+import 'package:task_manage_ment/common_widgets/common_text_field.dart';
 import 'package:task_manage_ment/common_widgets/light_text.dart';
 
 // Screen with bottom navigation bar
@@ -74,30 +75,77 @@ class _HomePageState extends State<HomePage> {
     var h = MediaQuery.of(context).size.height;
     var w = MediaQuery.of(context).size.width;
 
-
-  List projects =[{
-    "detail":"project1",
-    "progress":21,
-    "teammembers":[AppImages.avatar_1,AppImages.avatar_2,AppImages.avatar_3,AppImages.avatar_4]
-  },
-  {
-    "detail":"project1",
-    "progress":21,
-    "teammembers":[AppImages.avatar_1,AppImages.avatar_2,AppImages.avatar_3,AppImages.avatar_4]
-  }
-  ,{
-    "detail":"project1",
-    "progress":21,
-    "teammembers":[AppImages.avatar_1,AppImages.avatar_2,AppImages.avatar_3,AppImages.avatar_4]
-  }
-  ,{
-    "detail":"project1",
-    "progress":21,
-    "teammembers":[AppImages.avatar_1,AppImages.avatar_2,AppImages.avatar_3,AppImages.avatar_4]
-  }
-  
-  
-  ];
+    List projects = [
+      {
+        "detail": "project1",
+        "progress": 21,
+        "teammembers": [
+          AppImages.avatar_1,
+          AppImages.avatar_2,
+          AppImages.avatar_3,
+          AppImages.avatar_4
+        ]
+      },
+      {
+        "detail": "project1",
+        "progress": 21,
+        "teammembers": [
+          AppImages.avatar_1,
+          AppImages.avatar_2,
+          AppImages.avatar_3,
+          AppImages.avatar_4
+        ]
+      },
+      {
+        "detail": "project1",
+        "progress": 21,
+        "teammembers": [
+          AppImages.avatar_1,
+          AppImages.avatar_2,
+          AppImages.avatar_3,
+          AppImages.avatar_4
+        ]
+      },
+      {
+        "detail": "project1",
+        "progress": 21,
+        "teammembers": [
+          AppImages.avatar_1,
+          AppImages.avatar_2,
+          AppImages.avatar_3,
+          AppImages.avatar_4
+        ]
+      },      {
+        "detail": "project1",
+        "progress": 21,
+        "teammembers": [
+          AppImages.avatar_1,
+          AppImages.avatar_2,
+          AppImages.avatar_3,
+          AppImages.avatar_4
+        ]
+      },      {
+        "detail": "project1",
+        "progress": 21,
+        "teammembers": [
+          AppImages.avatar_1,
+          AppImages.avatar_2,
+          AppImages.avatar_3,
+          AppImages.avatar_4
+        ]
+      },
+            {
+        "detail": "project1",
+        "progress": 21,
+        "teammembers": [
+          AppImages.avatar_1,
+          AppImages.avatar_2,
+          AppImages.avatar_3,
+          AppImages.avatar_4
+        ]
+      },
+    ];
+   
     return Scaffold(
       backgroundColor: AppColor.blue212832,
       body: Padding(
@@ -131,31 +179,51 @@ class _HomePageState extends State<HomePage> {
                   )
                 ],
               ),
+              Row(mainAxisSize: MainAxisSize.min,
+                children: [
+                  Expanded(
+                    child: CommonTextField(
+                      hintText: "Seach tasks",
+                      prefixImage: AppImages.search_img,
+                    ),
+                  ),
+                  Container(
+                    height: 58,
+                    color: AppColor.yellowFED36A,
+                    child: Image.asset(AppImages.filter_icon),
+                  )
+                ],
+              ),
               Column(
                 children: [
                   Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        BoldText(
-                          text: "Completed Tasks",
-                          textsize: 20,
-                        ),
-                        LightText(
-                          text: "See all",
-                          textsize: 16,
-                          textcolor: AppColor.yellowFED36A,
-                        )
-                      ],
-                    ),
-                  ),
-                  Row(
+                      child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      ProjectSquareCard(
-                          projectdetails: "Real Estate Website Design",
-                          teammembers: [],
-                          progress: 20,cardcolor: AppColor.yellowFED36A,textcolor:AppColor.black000000,)
+                      BoldText(
+                        text: "Completed Tasks",
+                        textsize: 20,
+                      ),
+                      LightText(
+                        text: "See all",
+                        textsize: 16,
+                        textcolor: AppColor.yellowFED36A,
+                      )
                     ],
+                  )),
+                  Container(
+                    height: 200,
+                    child: ListView.builder(
+                      itemCount: 6,
+                      scrollDirection: Axis.horizontal,
+                 itemExtent: 200,
+                      itemBuilder: (context, index) {
+                        return ProjectSquareCard(
+                            projectdetails: projects[index]['detail'],
+                            teammembers: projects[index]['teammembers'],
+                            progress: projects[index]['progress']);
+                      },
+                    ),
                   )
                 ],
               )
@@ -181,21 +249,30 @@ class ProjectSquareCard extends StatelessWidget {
       required this.projectdetails,
       required this.teammembers,
       required this.progress,
-      this.cardcolor=AppColor.blue455A64, this.textcolor=AppColor.whiteFFFFFF});
+      this.cardcolor = AppColor.blue455A64,
+      this.textcolor = AppColor.whiteFFFFFF});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       // height: 175,
+      
       width: 183,
-      color: cardcolor,padding:EdgeInsets.all(10),
+      color: cardcolor, 
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          BoldText(text: projectdetails,textcolor: textcolor,),
-          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          BoldText(
+            text: projectdetails,
+            textcolor: textcolor,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              LightText(text: "Team members",textcolor: textcolor,),
+              LightText(
+                text: "Team members",
+                textcolor: textcolor,
+              ),
               Row(
                 children: [
                   Image.asset(
@@ -211,11 +288,25 @@ class ProjectSquareCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  LightText(text: "Completed",textcolor: textcolor,),
-                  LightText(text: "$progress %",textcolor: textcolor,),
-            ],
+                  LightText(
+                    text: "Completed",
+                    textcolor: textcolor,
+                  ),
+                  LightText(
+                    text: "$progress %",
+                    textcolor: textcolor,
+                  ),
+                ],
               ),
-               SizedBox(height: 10 ,child: LinearProgressIndicator(color: AppColor.yellowFED36A,minHeight:5,borderRadius: BorderRadius.circular(10),value: 20,valueColor:AlwaysStoppedAnimation(AppColor.black000000),))
+              SizedBox(
+                  height: 10,
+                  child: LinearProgressIndicator(
+                    color: AppColor.yellowFED36A,
+                    minHeight: 5,
+                    borderRadius: BorderRadius.circular(10),
+                    value: 20,
+                    valueColor: AlwaysStoppedAnimation(AppColor.black000000),
+                  ))
             ],
           )
         ],
