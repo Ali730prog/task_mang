@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:task_manage_ment/app_const/app_color.dart';
 import 'package:task_manage_ment/app_const/app_image.dart';
 import 'package:task_manage_ment/common_widgets/bold_text.dart';
+import 'package:task_manage_ment/common_widgets/common_profile_textfield.dart';
 import 'package:task_manage_ment/common_widgets/common_text_field.dart';
 import 'package:task_manage_ment/common_widgets/light_text.dart';
 
@@ -77,7 +78,7 @@ class _HomePageState extends State<HomePage> {
 
     List projects = [
       {
-        "detail": "project1",
+        "detail": "Mobile App Wireframe",
         "progress": 21,
         "teammembers": [
           AppImages.avatar_1,
@@ -97,7 +98,7 @@ class _HomePageState extends State<HomePage> {
         ]
       },
       {
-        "detail": "project1",
+        "detail": "Mobile App Wireframe",
         "progress": 21,
         "teammembers": [
           AppImages.avatar_1,
@@ -107,7 +108,7 @@ class _HomePageState extends State<HomePage> {
         ]
       },
       {
-        "detail": "project1",
+        "detail": "Mobile App Wireframe",
         "progress": 21,
         "teammembers": [
           AppImages.avatar_1,
@@ -182,10 +183,14 @@ class _HomePageState extends State<HomePage> {
               Row(mainAxisSize: MainAxisSize.min,
                 children: [
                   Expanded(
-                    child: CommonTextField(
-                      hintText: "Seach tasks",
-                      prefixImage: AppImages.search_img,
-                    ),
+                    child:
+                    //  CommonTextField(
+                    //   hintText: "Seach tasks",
+                    //   prefixImage: AppImages.search_img,
+                    // ),
+                    CommonProflleTextField(hintText: "Search Tasks",
+                    prefixImage: AppImages.search_img,
+                    )
                   ),
                   Container(
                     height: 58,
@@ -226,7 +231,44 @@ class _HomePageState extends State<HomePage> {
                     ),
                   )
                 ],
-              )
+              ),
+                   Column(
+                     children: [
+                       Row(
+                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                           children: [
+                       BoldText(
+                         text: "Ongoing Projects",
+                         textsize: 20,
+                       ),
+                       LightText(
+                         text: "See all",
+                         textsize: 16,
+                         textcolor: AppColor.yellowFED36A,
+                       )
+                                           ],
+                                         ),
+
+               Container(
+                height:390,
+                
+                    child: ListView.builder(
+                      itemCount: 6,
+                      scrollDirection: Axis.vertical,
+                 itemExtent: 200,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ProjectCard(
+                              projectdetails: projects[index]['detail'],
+                              teammembers: projects[index]['teammembers'],
+                              progress: projects[index]['progress']),
+                        );
+                      },
+                    ),
+                  )
+                     ],
+                   ),
             ],
           ),
         ),
@@ -310,6 +352,67 @@ class ProjectSquareCard extends StatelessWidget {
             ],
           )
         ],
+      ),
+    );
+  }
+}
+
+
+
+class ProjectCard extends StatelessWidget {
+  final String projectdetails;
+  final List teammembers;
+  final double progress;
+  final Color? cardcolor;
+  final Color? textcolor;
+  final String? duedate;
+
+  const ProjectCard(
+      {super.key,
+      required this.projectdetails,
+      required this.teammembers,
+      required this.progress,
+      this.cardcolor = AppColor.blue455A64,
+      this.textcolor = AppColor.whiteFFFFFF, this.duedate="--"});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+     height: 125,
+       color: cardcolor, 
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          BoldText(
+            text: projectdetails,
+            textcolor: textcolor,
+            textsize:21,
+          ),
+          Row(
+            children: [
+              Column(
+                children: [
+                  LightText(
+                    text: "Team members",
+                    textcolor: textcolor,
+                  ),
+                     Row(
+                        children: [
+                          Image.asset(
+                            AppImages.avatar_1,
+                            height: 20,
+                          )
+                        ],
+                      ),
+                  LightText(text: "Due on: $duedate"),
+                ],
+              ),
+
+              CircularProgressIndicator(backgroundColor: AppColor.yellowFED36A,value: 30,)
+            ],
+          ), 
+          
+          ],
       ),
     );
   }
